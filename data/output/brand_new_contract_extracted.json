@@ -1,0 +1,48 @@
+{
+  "document_number": "RAG-TEST-001",
+  "document_date": "2025-05-26",
+  "parties": [
+    {
+      "name": "Тестовая компания",
+      "role": "Заказчик",
+      "inn": null,
+      "ogrn": null,
+      "kpp": null,
+      "address": null,
+      "signatory_name": null,
+      "signatory_position": null,
+      "power_basis": null,
+      "power_number": null,
+      "power_date": null,
+      "bank_account": null
+    },
+    {
+      "name": "Партнёр",
+      "role": "Исполнитель",
+      "inn": null,
+      "ogrn": null,
+      "kpp": null,
+      "address": null,
+      "signatory_name": null,
+      "signatory_position": null,
+      "power_basis": null,
+      "power_number": null,
+      "power_date": null,
+      "bank_account": null
+    }
+  ],
+  "subject": "Тестирование системы RAG",
+  "price": "$999",
+  "price_amount": 999.0,
+  "currency": "USD",
+  "payment_terms": "Сразу (единовременная оплата)",
+  "delivery_terms": null,
+  "execution_term": "1 день",
+  "penalties": null,
+  "termination_terms": null,
+  "liability": null,
+  "acceptance_procedure": null,
+  "governing_law": null,
+  "dispute_resolution": null,
+  "additional_conditions": "Высокий риск недопонимания требований"
+}

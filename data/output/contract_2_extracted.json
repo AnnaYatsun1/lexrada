@@ -1,0 +1,48 @@
+{
+  "document_number": "SUPPLY-019",
+  "document_date": "2025-05-12",
+  "parties": [
+    {
+      "name": "ООО \"ТехноПоставка\"",
+      "role": "Поставщик",
+      "inn": "7701234567",
+      "ogrn": null,
+      "kpp": null,
+      "address": null,
+      "signatory_name": null,
+      "signatory_position": null,
+      "power_basis": null,
+      "power_number": null,
+      "power_date": null,
+      "bank_account": null
+    },
+    {
+      "name": "ООО \"МегаТрейд\"",
+      "role": "Покупатель",
+      "inn": "7707654321",
+      "ogrn": null,
+      "kpp": null,
+      "address": null,
+      "signatory_name": null,
+      "signatory_position": null,
+      "power_basis": null,
+      "power_number": null,
+      "power_date": null,
+      "bank_account": null
+    }
+  ],
+  "subject": "Поставка серверного оборудования",
+  "price": "1 250 000 рублей",
+  "price_amount": 1250000.0,
+  "currency": "RUB",
+  "payment_terms": "не указано",
+  "delivery_terms": "до 01.08.2025",
+  "execution_term": "до 01.08.2025",
+  "penalties": "0.1% за каждый день просрочки",
+  "termination_terms": "не указано",
+  "liability": "не указано",
+  "acceptance_procedure": "не указано",
+  "governing_law": "не указано",
+  "dispute_resolution": "не указано",
+  "additional_conditions": "не указано"
+}

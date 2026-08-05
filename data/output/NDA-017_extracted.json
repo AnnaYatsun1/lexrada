@@ -1,0 +1,48 @@
+{
+  "document_number": "NDA-017",
+  "document_date": "2025-03-10",
+  "parties": [
+    {
+      "name": "ООО «Инновационные Решения»",
+      "role": "Сторона соглашения",
+      "inn": "7705001122",
+      "ogrn": "1147700123456",
+      "kpp": null,
+      "address": null,
+      "signatory_name": null,
+      "signatory_position": null,
+      "power_basis": null,
+      "power_number": null,
+      "power_date": null,
+      "bank_account": null
+    },
+    {
+      "name": "ООО «ТехноСистемы»",
+      "role": "Сторона соглашения",
+      "inn": "7705112233",
+      "ogrn": "1187700654321",
+      "kpp": null,
+      "address": null,
+      "signatory_name": null,
+      "signatory_position": null,
+      "power_basis": null,
+      "power_number": null,
+      "power_date": null,
+      "bank_account": null
+    }
+  ],
+  "subject": "Стороны обязуются не раскрывать конфиденциальную информацию, полученную в ходе сотрудничества. Соглашение о конфиденциальности устанавливает порядок защиты конфиденциальной информации между сторонами.",
+  "price": null,
+  "price_amount": null,
+  "currency": "RUB",
+  "payment_terms": null,
+  "delivery_terms": null,
+  "execution_term": "5 лет с момента подписания",
+  "penalties": "500 000 рублей за каждый подтвержденный случай нарушения (разглашения конфиденциальной информации)",
+  "termination_terms": "Расторжение возможно по соглашению сторон",
+  "liability": "Стороны несут ответственность за разглашение конфиденциальной информации",
+  "acceptance_procedure": null,
+  "governing_law": null,
+  "dispute_resolution": null,
+  "additional_conditions": "Соглашение заключено в г. Москва"
+}

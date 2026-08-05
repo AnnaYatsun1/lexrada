@@ -1,0 +1,48 @@
+{
+  "document_number": "SERVICE-016",
+  "document_date": "2025-02-08",
+  "parties": [
+    {
+      "name": "ООО «Бизнес Аналитика»",
+      "role": "Исполнитель",
+      "inn": "1655123456",
+      "ogrn": "1121655001111",
+      "kpp": null,
+      "address": null,
+      "signatory_name": "Романов Павел Игоревич",
+      "signatory_position": "директор",
+      "power_basis": "устав",
+      "power_number": null,
+      "power_date": null,
+      "bank_account": null
+    },
+    {
+      "name": "АО «ТатПром»",
+      "role": "Заказчик",
+      "inn": "1655789123",
+      "ogrn": "1021600002222",
+      "kpp": null,
+      "address": null,
+      "signatory_name": "Федорова Анна Сергеевна",
+      "signatory_position": "исполнительный директор",
+      "power_basis": "устав",
+      "power_number": null,
+      "power_date": null,
+      "bank_account": null
+    }
+  ],
+  "subject": "Исполнитель оказывает услуги по анализу бизнес-процессов Заказчика.",
+  "price": "780 000 рублей",
+  "price_amount": 780000.0,
+  "currency": "RUB",
+  "payment_terms": "Оплата осуществляется двумя платежами: 50% аванс; 50% после подписания акта.",
+  "delivery_terms": "Срок оказания услуг с 08.02.2025 по 31.05.2025",
+  "execution_term": "с 08.02.2025 по 31.05.2025",
+  "penalties": null,
+  "termination_terms": null,
+  "liability": null,
+  "acceptance_procedure": "Подписание акта выполненных работ (упоминается в условиях оплаты)",
+  "governing_law": "Российская Федерация",
+  "dispute_resolution": "Споры рассматриваются в Арбитражном суде Республики Татарстан.",
+  "additional_conditions": null
+}

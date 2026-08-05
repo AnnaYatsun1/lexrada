@@ -1,0 +1,52 @@
+INTERNATIONAL SUPPLY AGREEMENT
+No. USD-2025-011
+
+Moscow
+May 2, 2025
+
+Global Hardware Solutions Ltd, United Kingdom, hereinafter referred to as the "Seller",
+
+and
+
+ООО «ДатаЦентр Технологии», hereinafter referred to as the "Buyer",
+
+have entered into this Agreement.
+
+1. Subject
+
+The Seller agrees to supply server equipment and network infrastructure components.
+
+2. Contract Value
+
+The total contract value shall be USD 145,000 (One hundred forty-five thousand United States dollars).
+
+3. Payment Terms
+
+50% advance payment.
+50% within 30 days after delivery.
+
+4. Delivery Terms
+
+DAP Moscow Warehouse.
+
+5. Delivery Deadline
+
+August 30, 2025.
+
+6. Governing Law
+
+The laws of England and Wales shall apply.
+
+7. Dispute Resolution
+
+London Court of International Arbitration.
+
+Seller:
+Global Hardware Solutions Ltd
+London, United Kingdom
+
+Buyer:
+ООО «ДатаЦентр Технологии»
+ИНН 7709988776
+ОГРН 1197700004321
+Адрес: г. Москва, ул. АйТи, д. 18

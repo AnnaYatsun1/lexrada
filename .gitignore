@@ -1,0 +1,31 @@
+# secrets — НИКОГДА не коммитить
+.env
+.env.docker
+.env.*
+
+# python
+__pycache__/
+*.pyc
+*.pyo
+venv/
+.venv/
+*.egg-info/
+
+# логи
+logs/
+*.log
+
+# ChromaDB (локальный индекс)
+data/chroma_db/
+*.sqlite3
+
+# данные и загрузки
+data/uploads/
+input_contracts_backup/
+
+# OS
+.DS_Store
+
+# IDE
+.vscode/
+.idea/

@@ -1,0 +1,48 @@
+{
+  "document_number": "STORE-2025-010",
+  "document_date": "2025-05-05",
+  "parties": [
+    {
+      "name": "ООО «СкладЛогистик»",
+      "role": "Хранитель",
+      "inn": "7811223344",
+      "ogrn": "1097800000011",
+      "kpp": null,
+      "address": null,
+      "signatory_name": null,
+      "signatory_position": null,
+      "power_basis": null,
+      "power_number": null,
+      "power_date": null,
+      "bank_account": null
+    },
+    {
+      "name": "ООО «ИмпортСервис»",
+      "role": "Поклажедатель",
+      "inn": "7709988776",
+      "ogrn": "1167700000789",
+      "kpp": null,
+      "address": null,
+      "signatory_name": null,
+      "signatory_position": null,
+      "power_basis": null,
+      "power_number": null,
+      "power_date": null,
+      "bank_account": null
+    }
+  ],
+  "subject": "Хранитель принимает на ответственное хранение товары Поклажедателя.",
+  "price": "1 200 000 рублей",
+  "price_amount": 1200000.0,
+  "currency": "RUB",
+  "payment_terms": "Не указан",
+  "delivery_terms": "Не указаны",
+  "execution_term": "Не указан",
+  "penalties": "Не указаны",
+  "termination_terms": "Не указаны",
+  "liability": "Хранитель несет полную материальную ответственность за утрату или повреждение имущества (неограниченная ответственность)",
+  "acceptance_procedure": "Не указан",
+  "governing_law": "Не указано",
+  "dispute_resolution": "Не указаны",
+  "additional_conditions": "Договор хранения. Место заключения: г. Санкт-Петербург"
+}

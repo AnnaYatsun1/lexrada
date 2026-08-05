@@ -1,0 +1,12 @@
+{
+  "contract_number": "ANOM-2025-001",
+  "date": "26 vbvb 2025",
+  "client": "Партнёр",
+  "executor": "Супер Компания",
+  "subject": "Поставка оборудования для шитья",
+  "amount": "$40",
+  "deadline": "1 час",
+  "payment_terms": "Не указано",
+  "penalties": "100% в день за любую просрочку",
+  "termination": "Не указано"
+}

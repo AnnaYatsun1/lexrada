@@ -1,0 +1,48 @@
+{
+  "document_number": "AGENT-2025-009",
+  "document_date": "2025-04-10",
+  "parties": [
+    {
+      "name": "ООО «ИмпортСервис»",
+      "role": "Принципал",
+      "inn": "7709988776",
+      "ogrn": "1167700000789",
+      "kpp": null,
+      "address": null,
+      "signatory_name": null,
+      "signatory_position": null,
+      "power_basis": null,
+      "power_number": null,
+      "power_date": null,
+      "bank_account": null
+    },
+    {
+      "name": "ООО «Коммерческий Агент»",
+      "role": "Агент",
+      "inn": "7704455667",
+      "ogrn": "1177700012345",
+      "kpp": null,
+      "address": null,
+      "signatory_name": null,
+      "signatory_position": null,
+      "power_basis": null,
+      "power_number": null,
+      "power_date": null,
+      "bank_account": null
+    }
+  ],
+  "subject": "Агент обязуется осуществлять поиск клиентов и организовывать заключение договоров поставки продукции Принципала.",
+  "price": "5% от суммы заключенных сделок",
+  "price_amount": null,
+  "currency": null,
+  "payment_terms": "Агент получает вознаграждение в размере 5% от суммы заключенных сделок",
+  "delivery_terms": null,
+  "execution_term": "до 31 декабря 2025 года",
+  "penalties": null,
+  "termination_terms": null,
+  "liability": null,
+  "acceptance_procedure": null,
+  "governing_law": null,
+  "dispute_resolution": null,
+  "additional_conditions": null
+}

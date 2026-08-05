@@ -1,0 +1,48 @@
+{
+  "document_number": "1782901024",
+  "document_date": null,
+  "parties": [
+    {
+      "name": "ООО А",
+      "role": null,
+      "inn": null,
+      "ogrn": null,
+      "kpp": null,
+      "address": null,
+      "signatory_name": null,
+      "signatory_position": null,
+      "power_basis": null,
+      "power_number": null,
+      "power_date": null,
+      "bank_account": null
+    },
+    {
+      "name": "ООО Б",
+      "role": null,
+      "inn": null,
+      "ogrn": null,
+      "kpp": null,
+      "address": null,
+      "signatory_name": null,
+      "signatory_position": null,
+      "power_basis": null,
+      "power_number": null,
+      "power_date": null,
+      "bank_account": null
+    }
+  ],
+  "subject": null,
+  "price": "100000 UAH",
+  "price_amount": 100000.0,
+  "currency": "UAH",
+  "payment_terms": null,
+  "delivery_terms": null,
+  "execution_term": null,
+  "penalties": null,
+  "termination_terms": null,
+  "liability": null,
+  "acceptance_procedure": null,
+  "governing_law": null,
+  "dispute_resolution": null,
+  "additional_conditions": null
+}

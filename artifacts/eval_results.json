@@ -1,0 +1,101 @@
+[
+  {
+    "contract_id": "contract_1",
+    "status": "OK",
+    "reason": null,
+    "exact": 46.15,
+    "normalized": 53.85,
+    "semantic": 84.62,
+    "overall": 61.54
+  },
+  {
+    "contract_id": "contract_2",
+    "status": "OK",
+    "reason": null,
+    "exact": 75.0,
+    "normalized": 75.0,
+    "semantic": 75.0,
+    "overall": 75.0
+  },
+  {
+    "contract_id": "contract_3",
+    "status": "OK",
+    "reason": null,
+    "exact": 50.0,
+    "normalized": 70.0,
+    "semantic": 80.0,
+    "overall": 66.67
+  },
+  {
+    "contract_id": "contract_4",
+    "status": "SKIP",
+    "reason": "файл SERVICE-016.txt не найден",
+    "exact": 0.0,
+    "normalized": 0.0,
+    "semantic": 0.0,
+    "overall": 0.0
+  },
+  {
+    "contract_id": "contract_5",
+    "status": "OK",
+    "reason": null,
+    "exact": 44.44,
+    "normalized": 66.67,
+    "semantic": 66.67,
+    "overall": 59.26
+  },
+  {
+    "contract_id": "contract_6",
+    "status": "OK",
+    "reason": null,
+    "exact": 63.64,
+    "normalized": 72.73,
+    "semantic": 81.82,
+    "overall": 72.73
+  },
+  {
+    "contract_id": "contract_7",
+    "status": "OK",
+    "reason": null,
+    "exact": 57.14,
+    "normalized": 57.14,
+    "semantic": 71.43,
+    "overall": 61.9
+  },
+  {
+    "contract_id": "contract_8",
+    "status": "OK",
+    "reason": null,
+    "exact": 57.14,
+    "normalized": 57.14,
+    "semantic": 57.14,
+    "overall": 57.14
+  },
+  {
+    "contract_id": "contract_9",
+    "status": "OK",
+    "reason": null,
+    "exact": 50.0,
+    "normalized": 50.0,
+    "semantic": 83.33,
+    "overall": 61.11
+  },
+  {
+    "contract_id": "contract_10",
+    "status": "OK",
+    "reason": null,
+    "exact": 66.67,
+    "normalized": 66.67,
+    "semantic": 100.0,
+    "overall": 77.78
+  },
+  {
+    "contract_id": "contract_11",
+    "status": "OK",
+    "reason": null,
+    "exact": 62.5,
+    "normalized": 87.5,
+    "semantic": 87.5,
+    "overall": 79.17
+  }
+]

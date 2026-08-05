@@ -1,0 +1,48 @@
+{
+  "document_number": "SUPPLY-015",
+  "document_date": "2025-01-15",
+  "parties": [
+    {
+      "name": "ООО «УралСнаб»",
+      "role": "Поставщик",
+      "inn": "6678123456",
+      "ogrn": "1186658001234",
+      "kpp": null,
+      "address": "г. Екатеринбург, ул. Заводская, д. 15",
+      "signatory_name": "Кузнецов Виктор Андреевич",
+      "signatory_position": "директор",
+      "power_basis": "Устав",
+      "power_number": null,
+      "power_date": null,
+      "bank_account": null
+    },
+    {
+      "name": "ООО «СтройРесурс»",
+      "role": "Покупатель",
+      "inn": "6678456789",
+      "ogrn": "1196658009876",
+      "kpp": null,
+      "address": "г. Екатеринбург, ул. Машиностроителей, д. 44",
+      "signatory_name": "Орлов Игорь Сергеевич",
+      "signatory_position": "генеральный директор",
+      "power_basis": "Устав",
+      "power_number": null,
+      "power_date": null,
+      "bank_account": null
+    }
+  ],
+  "subject": "Поставщик обязуется поставить строительные материалы согласно спецификациям Покупателя.",
+  "price": "2 350 000 рублей",
+  "price_amount": 2350000.0,
+  "currency": "RUB",
+  "payment_terms": "Оплата производится в течение 20 календарных дней после поставки товара",
+  "delivery_terms": "Поставка осуществляется партиями до 31 декабря 2025 года",
+  "execution_term": "Поставка осуществляется партиями до 31 декабря 2025 года",
+  "penalties": "За просрочку поставки Поставщик уплачивает неустойку в размере 0,1% от стоимости просроченного товара за каждый день просрочки",
+  "termination_terms": null,
+  "liability": null,
+  "acceptance_procedure": null,
+  "governing_law": null,
+  "dispute_resolution": null,
+  "additional_conditions": null
+}

@@ -1,0 +1,48 @@
+{
+  "document_number": "NDA-2025-007",
+  "document_date": "2025-06-15",
+  "parties": [
+    {
+      "name": "ООО «Инновационные Решения»",
+      "role": "Раскрывающая сторона",
+      "inn": "7705123456",
+      "ogrn": "1147700123456",
+      "kpp": null,
+      "address": null,
+      "signatory_name": "Козлов Андрей Викторович",
+      "signatory_position": "Генеральный директор",
+      "power_basis": "Устав",
+      "power_number": null,
+      "power_date": null,
+      "bank_account": null
+    },
+    {
+      "name": "ООО «ТехноСистемы»",
+      "role": "Получающая сторона",
+      "inn": "7705112233",
+      "ogrn": "1187700654321",
+      "kpp": null,
+      "address": null,
+      "signatory_name": "Смирнов Илья Павлович",
+      "signatory_position": "Генеральный директор",
+      "power_basis": "Устав",
+      "power_number": null,
+      "power_date": null,
+      "bank_account": null
+    }
+  ],
+  "subject": "Раскрывающая сторона передает конфиденциальную информацию, связанную с разработкой программного обеспечения. Получающая сторона обязуется не раскрывать такую информацию третьим лицам.",
+  "price": null,
+  "price_amount": null,
+  "currency": "RUB",
+  "payment_terms": null,
+  "delivery_terms": null,
+  "execution_term": "5 лет",
+  "penalties": "За каждый подтвержденный случай разглашения конфиденциальной информации Получающая сторона выплачивает штраф в размере 500 000 рублей",
+  "termination_terms": null,
+  "liability": null,
+  "acceptance_procedure": null,
+  "governing_law": null,
+  "dispute_resolution": "Споры рассматриваются в Арбитражном суде города Москвы",
+  "additional_conditions": "Соглашение о конфиденциальности (NDA). Получающая сторона обязуется не раскрывать конфиденциальную информацию третьим лицам."
+}

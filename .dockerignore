@@ -1,0 +1,7 @@
+__pycache__
+*.pyc
+.git
+logs/
+*.log
+input_contracts_backup/
+eval_results.json

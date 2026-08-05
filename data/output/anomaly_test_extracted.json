@@ -1,0 +1,48 @@
+{
+  "document_number": "ANOM-2025-001",
+  "document_date": "2025-05-26",
+  "parties": [
+    {
+      "name": "Супер Компания",
+      "role": "Поставщик",
+      "inn": null,
+      "ogrn": null,
+      "kpp": null,
+      "address": null,
+      "signatory_name": null,
+      "signatory_position": null,
+      "power_basis": null,
+      "power_number": null,
+      "power_date": null,
+      "bank_account": null
+    },
+    {
+      "name": "Партнёр",
+      "role": "Покупатель",
+      "inn": null,
+      "ogrn": null,
+      "kpp": null,
+      "address": null,
+      "signatory_name": null,
+      "signatory_position": null,
+      "power_basis": null,
+      "power_number": null,
+      "power_date": null,
+      "bank_account": null
+    }
+  ],
+  "subject": "Поставка оборудования",
+  "price": "$50 (пятьдесят долларов США)",
+  "price_amount": 50.0,
+  "currency": "USD",
+  "payment_terms": "Не указан порядок оплаты",
+  "delivery_terms": "1 час с момента заключения договора",
+  "execution_term": "1 час",
+  "penalties": "100% от суммы договора в день за любую просрочку",
+  "termination_terms": "Не указаны",
+  "liability": "Не указана",
+  "acceptance_procedure": "Не указана",
+  "governing_law": "Не указано",
+  "dispute_resolution": "Не указана",
+  "additional_conditions": "Гарантия отсутствует"
+}

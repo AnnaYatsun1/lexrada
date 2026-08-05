@@ -1,0 +1,48 @@
+{
+  "document_number": "NDA-017",
+  "document_date": "2025-03-10",
+  "parties": [
+    {
+      "name": "ООО «Инновационные Решения»",
+      "role": "Сторона",
+      "inn": "7705001122",
+      "ogrn": "1147700123456",
+      "kpp": null,
+      "address": null,
+      "signatory_name": null,
+      "signatory_position": null,
+      "power_basis": null,
+      "power_number": null,
+      "power_date": null,
+      "bank_account": null
+    },
+    {
+      "name": "ООО «ТехноСистемы»",
+      "role": "Сторона",
+      "inn": "7705112233",
+      "ogrn": "1187700654321",
+      "kpp": null,
+      "address": null,
+      "signatory_name": null,
+      "signatory_position": null,
+      "power_basis": null,
+      "power_number": null,
+      "power_date": null,
+      "bank_account": null
+    }
+  ],
+  "subject": "Стороны обязуются не раскрывать конфиденциальную информацию, полученную в ходе сотрудничества. Соглашение о конфиденциальности (NDA).",
+  "price": "не указана",
+  "price_amount": null,
+  "currency": "RUB",
+  "payment_terms": "не применимо",
+  "delivery_terms": "не применимо",
+  "execution_term": "5 лет",
+  "penalties": "500 000 рублей за каждый подтвержденный случай разглашения конфиденциальной информации",
+  "termination_terms": "Расторжение возможно по соглашению сторон",
+  "liability": "Ограниченная — фиксированная сумма штрафа за разглашение",
+  "acceptance_procedure": "не применимо",
+  "governing_law": "не указано",
+  "dispute_resolution": "не указано",
+  "additional_conditions": "Соглашение о неразглашении конфиденциальной информации (NDA). Обязательство не раскрывать конфиденциальную информацию, полученную в ходе сотрудничества."
+}

@@ -1,0 +1,306 @@
+[
+  {
+  "contract_1": {
+    "file": "ANOM-2025-001.txt",
+    "exact_fields": ["document_number", "currency", "price_amount"],
+    "normalized_fields": ["document_date", "execution_term"],
+    "semantic_fields": ["subject", "payment_terms", "delivery_terms", "penalties", "liability", "acceptance_procedure", "dispute_resolution"],
+    "expected_output": {
+      "document_number": "ANOM-2025-001",
+      "document_date": "2025-02-12",
+      "subject": "Поставка дизельного топлива",
+      "price": "12 450 000 рублей без НДС",
+      "price_amount": 12450000,
+      "currency": "RUB",
+      "payment_terms": "100% в течение 10 банковских дней после поставки",
+      "delivery_terms": "DAP склад Покупателя",
+      "execution_term": "до 31 декабря 2025 года",
+      "penalties": "0,1% от стоимости просроченной партии за каждый день просрочки",
+      "liability": "ограничивается размером причинённых убытков",
+      "acceptance_procedure": "по товарным накладным формы ТОРГ-12",
+      "dispute_resolution": "Арбитражный суд города Санкт-Петербурга",
+      "parties": []
+    }
+  }
+},
+{
+"contract_2": {
+"file": "contract_2.txt",
+"expected_output": {
+"document_number": "SUPPLY-019",
+"document_date": "2025-05-12",
+"parties": [
+{
+"name": "ООО ТехноПоставка",
+"inn": "7701234567"
+},
+{
+"name": "ООО МегаТрейд",
+"inn": "7707654321"
+}
+],
+"subject": "Поставка серверного оборудования",
+"price": "1250000 RUB",
+"price_amount": 1250000,
+"currency": "RUB",
+"execution_term": "2025-08-01",
+"penalties": "0.1% за каждый день просрочки"
+}
+}
+},
+{
+"contract_3": {
+"file": "contract_3.txt",
+"expected_output": {
+"document_number": "TRI-2025-009",
+"document_date": "2025-04-01",
+"parties": [
+{
+"name": "ООО Заказчик",
+"role": "Заказчик",
+"inn": "7701234567",
+"ogrn": "1157700000001",
+"address": "г. Москва, ул. Новая, д. 10",
+"signatory_name": "Петров Сергей Иванович",
+"signatory_position": "Генеральный директор",
+"power_basis": "Устав"
+},
+{
+"name": "ООО Разработка Плюс",
+"role": "Исполнитель",
+"inn": "7722334455",
+"ogrn": "1187700000002",
+"address": "г. Москва, ул. Техническая, д. 25",
+"signatory_name": "Иванов Андрей Викторович",
+"signatory_position": "Генеральный директор",
+"power_basis": "Устав"
+},
+{
+"name": "АО Банк Гарант",
+"role": "Гарант",
+"inn": "7705556677",
+"ogrn": "1027700000003",
+"address": "г. Москва, проспект Мира, д. 120",
+"signatory_name": "Соколов Николай Петрович",
+"signatory_position": "Председатель Правления",
+"power_basis": "Устав"
+}
+],
+"subject": "Разработка информационной системы для автоматизации складского учета",
+"price": "5800000 RUB",
+"price_amount": 5800000,
+"currency": "RUB",
+"payment_terms": "30% аванс, оставшаяся сумма после подписания акта выполненных работ",
+"execution_term": "2025-12-31",
+"penalties": "0.05% за каждый день просрочки выполнения работ",
+"dispute_resolution": "Арбитражный суд города Москвы"
+}
+}
+},
+{
+  "contract_4": {
+    "file": "SERVICE-016.txt",
+    "exact_fields": ["document_number", "currency", "price_amount"],
+    "normalized_fields": ["document_date", "price"],
+    "semantic_fields": ["subject", "payment_terms", "execution_term", "dispute_resolution"],
+    "expected_output": {
+      "document_number": "SERVICE-016",
+      "document_date": "2025-02-08",
+      "subject": "услуги по анализу бизнес-процессов",
+      "price": "780 000 рублей",
+      "price_amount": 780000,
+      "currency": "RUB",
+      "payment_terms": "50% аванс, 50% после подписания акта",
+      "execution_term": "с 08.02.2025 по 31.05.2025",
+      "dispute_resolution": "Арбитражный суд Республики Татарстан",
+      "parties": []
+    }
+  }
+},
+{
+"contract_5": {
+"file": "contract_5.txt",
+"expected_output": {
+"document_number": "SUPPLY-015",
+"document_date": "2025-01-15",
+"parties": [
+{
+"name": "ООО УралСнаб",
+"role": "Поставщик",
+"inn": "6678123456",
+"ogrn": "1186658001234",
+"address": "г. Екатеринбург, ул. Заводская, д. 15",
+"signatory_name": "Кузнецов Виктор Андреевич",
+"signatory_position": "Директор",
+"power_basis": "Устав"
+},
+{
+"name": "ООО СтройРесурс",
+"role": "Покупатель",
+"inn": "6678456789",
+"ogrn": "1196658009876",
+"address": "г. Екатеринбург, ул. Машиностроителей, д. 44",
+"signatory_name": "Орлов Игорь Сергеевич",
+"signatory_position": "Генеральный директор",
+"power_basis": "Устав"
+}
+],
+"subject": "Поставка строительных материалов",
+"price": "2350000 RUB",
+"price_amount": 2350000,
+"currency": "RUB",
+"payment_terms": "оплата в течение 20 календарных дней после поставки",
+"execution_term": "2025-12-31",
+"penalties": "0.1% за каждый день просрочки поставки"
+}
+}
+},
+{
+"contract_6": {
+"file": "contract_6.txt",
+"expected_output": {
+"document_number": "USD-2025-011",
+"document_date": "2025-05-02",
+"parties": [
+{
+"name": "Global Hardware Solutions Ltd",
+"role": "Seller",
+"address": "London, United Kingdom"
+},
+{
+"name": "ООО ДатаЦентр Технологии",
+"role": "Buyer",
+"inn": "7709988776",
+"ogrn": "1197700004321",
+"address": "г. Москва, ул. АйТи, д. 18"
+}
+],
+"subject": "Supply of server equipment and network infrastructure components",
+"price": "145000 USD",
+"price_amount": 145000,
+"currency": "USD",
+"payment_terms": "50% advance payment, 50% within 30 days after delivery",
+"delivery_terms": "DAP Moscow Warehouse",
+"execution_term": "2025-08-30",
+"governing_law": "Laws of England and Wales",
+"dispute_resolution": "London Court of International Arbitration"
+}
+}
+},
+{
+  "contract_7": {
+    "file": "contract_7.txt",
+    "exact_fields": ["document_number", "currency"],
+    "normalized_fields": ["document_date"],
+    "semantic_fields": ["subject", "penalties", "execution_term", "dispute_resolution"],
+    "expected_output": {
+      "document_number": "NDA-2025-007",
+      "document_date": "2025-06-15",
+      "subject": "Передача конфиденциальной информации связанной с разработкой ПО",
+      "currency": "RUB",
+      "execution_term": "5 лет",
+      "penalties": "500 000 рублей за каждый случай разглашения",
+      "dispute_resolution": "Арбитражный суд города Москвы",
+      "parties": []
+    }
+  }
+}, {
+"contract_8": {
+"file": "contract_8.txt",
+"expected_output": {
+"document_number": "LIC-2025-008",
+"document_date": "2025-03-20",
+"parties": [
+{
+"name": "ООО СофтЛаб",
+"role": "Лицензиар",
+"inn": "7733445566",
+"ogrn": "1187700000123"
+},
+{
+"name": "АО ФинТех Банк",
+"role": "Лицензиат",
+"inn": "7701000001",
+"ogrn": "1027700000001"
+}
+],
+"subject": "Предоставление лицензии на программное обеспечение",
+"price_amount": 3500000,
+"currency": "RUB",
+"payment_terms": "единовременная оплата",
+"execution_term": "2028-03-20"
+}
+}
+}, {
+  "contract_9": {
+    "file": "contract_9.txt",
+    "exact_fields": ["document_number", "currency"],
+    "normalized_fields": ["document_date"],
+    "semantic_fields": ["subject", "payment_terms", "execution_term"],
+    "expected_output": {
+      "document_number": "AGENT-2025-009",
+      "document_date": "2025-04-10",
+      "subject": "Поиск клиентов и заключение договоров поставки продукции Принципала",
+      "currency": "RUB",
+      "payment_terms": "5% от суммы заключенных сделок",
+      "execution_term": "до 31 декабря 2025 года",
+      "parties": []
+    }
+  }
+}, {
+"contract_10": {
+"file": "contract_10.txt",
+"expected_output": {
+"document_number": "STORE-2025-010",
+"document_date": "2025-05-05",
+"parties": [
+{
+"name": "ООО СкладЛогистик",
+"role": "Хранитель",
+"inn": "7811223344",
+"ogrn": "1097800000011"
+},
+{
+"name": "ООО ИмпортСервис",
+"role": "Поклажедатель",
+"inn": "7709988776",
+"ogrn": "1167700000789"
+}
+],
+"subject": "Ответственное хранение товаров",
+"price_amount": 1200000,
+"currency": "RUB",
+"liability": "полная материальная ответственность за утрату имущества"
+}
+}
+}, {
+"contract_11": {
+"file": "contract_11.txt",
+"expected_output": {
+"document_number": "BUILD-2025-011",
+"document_date": "2025-01-30",
+"parties": [
+{
+"name": "ООО Девелопмент Плюс",
+"role": "Заказчик",
+"inn": "7703211234",
+"ogrn": "1157700001234"
+},
+{
+"name": "ООО СтройГарант",
+"role": "Подрядчик",
+"inn": "7722998877",
+"ogrn": "1187700045678"
+}
+],
+"subject": "Строительство складского комплекса",
+"price_amount": 85000000,
+"currency": "RUB",
+"execution_term": "2026-12-31",
+"penalties": "0.05% за каждый день просрочки",
+"dispute_resolution": "Арбитражный суд города Москвы"
+}
+}
+}
+
+]

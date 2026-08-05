@@ -1,0 +1,48 @@
+{
+  "document_number": "USD-2025-011",
+  "document_date": "2025-05-02",
+  "parties": [
+    {
+      "name": "Global Hardware Solutions Ltd",
+      "role": "Продавец (Seller)",
+      "inn": null,
+      "ogrn": null,
+      "kpp": null,
+      "address": "London, United Kingdom",
+      "signatory_name": null,
+      "signatory_position": null,
+      "power_basis": null,
+      "power_number": null,
+      "power_date": null,
+      "bank_account": null
+    },
+    {
+      "name": "ООО «ДатаЦентр Технологии»",
+      "role": "Покупатель (Buyer)",
+      "inn": "7709988776",
+      "ogrn": "1197700004321",
+      "kpp": null,
+      "address": "г. Москва, ул. АйТи, д. 18",
+      "signatory_name": null,
+      "signatory_position": null,
+      "power_basis": null,
+      "power_number": null,
+      "power_date": null,
+      "bank_account": null
+    }
+  ],
+  "subject": "Поставка серверного оборудования и компонентов сетевой инфраструктуры (The Seller agrees to supply server equipment and network infrastructure components)",
+  "price": "USD 145,000 (One hundred forty-five thousand United States dollars)",
+  "price_amount": 145000.0,
+  "currency": "USD",
+  "payment_terms": "50% авансовый платеж; 50% в течение 30 дней после доставки (50% advance payment; 50% within 30 days after delivery)",
+  "delivery_terms": "DAP Moscow Warehouse",
+  "execution_term": "До 30 августа 2025 г. (August 30, 2025)",
+  "penalties": null,
+  "termination_terms": null,
+  "liability": null,
+  "acceptance_procedure": null,
+  "governing_law": "Законы Англии и Уэльса (The laws of England and Wales)",
+  "dispute_resolution": "Лондонский суд международного арбитража (London Court of International Arbitration)",
+  "additional_conditions": null
+}

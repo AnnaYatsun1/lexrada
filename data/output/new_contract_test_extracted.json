@@ -1,0 +1,48 @@
+{
+  "document_number": "2025-005",
+  "document_date": "2025-05-26",
+  "parties": [
+    {
+      "name": "ООО \"ТехноСервис\"",
+      "role": "Поставщик",
+      "inn": null,
+      "ogrn": null,
+      "kpp": null,
+      "address": null,
+      "signatory_name": null,
+      "signatory_position": null,
+      "power_basis": null,
+      "power_number": null,
+      "power_date": null,
+      "bank_account": null
+    },
+    {
+      "name": "ЗАО \"Промышленный альянс\"",
+      "role": "Покупатель",
+      "inn": null,
+      "ogrn": null,
+      "kpp": null,
+      "address": null,
+      "signatory_name": null,
+      "signatory_position": null,
+      "power_basis": null,
+      "power_number": null,
+      "power_date": null,
+      "bank_account": null
+    }
+  ],
+  "subject": "Поставка оборудования и запчастей",
+  "price": "$12500 USD",
+  "price_amount": 12500.0,
+  "currency": "USD",
+  "payment_terms": "50% авансом, 50% по факту поставки",
+  "delivery_terms": "До 30 июня 2025",
+  "execution_term": "До 30 июня 2025",
+  "penalties": "0.5% в день за просрочку",
+  "termination_terms": "По письменному согласию сторон с 30-дневным уведомлением",
+  "liability": null,
+  "acceptance_procedure": null,
+  "governing_law": null,
+  "dispute_resolution": null,
+  "additional_conditions": null
+}

@@ -1,0 +1,19 @@
+{
+  "document_number": null,
+  "document_date": null,
+  "parties": [],
+  "subject": null,
+  "price": null,
+  "price_amount": null,
+  "currency": null,
+  "payment_terms": null,
+  "delivery_terms": null,
+  "execution_term": null,
+  "penalties": null,
+  "termination_terms": null,
+  "liability": null,
+  "acceptance_procedure": null,
+  "governing_law": null,
+  "dispute_resolution": null,
+  "additional_conditions": null
+}

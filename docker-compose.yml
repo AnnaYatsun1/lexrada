@@ -1,0 +1,110 @@
+# services:
+#   api:
+#     build: .
+#     ports:
+#       - "8000:8000"
+#     env_file:
+#       - .env.docker
+#     volumes:
+#       - ./data:/app/data
+#     restart: unless-stopped
+
+#   db:
+#     image: postgres:17
+#     container_name: lexradar-postgres
+#     environment:
+#       POSTGRES_USER: lexradar
+#       POSTGRES_PASSWORD: lexradar_dev_password
+#       POSTGRES_DB: lexradar
+#     ports:
+#       - "5434:5432"
+#     volumes:
+#       - postgres_data:/var/lib/postgresql/data
+#     healthcheck:
+#       test: ["CMD-SHELL", "pg_isready -U lexradar -d lexradar"]
+#       interval: 5s
+#       timeout: 5s
+#       retries: 5
+#     restart: unless-stopped
+
+# volumes:
+#   postgres_data:
+
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    env_file:
+      - .env.docker
+    volumes:
+      - ./data:/app/data
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+
+  db:
+    image: postgres:17
+    container_name: lexradar-postgres
+    environment:
+      POSTGRES_USER: lexradar
+      POSTGRES_PASSWORD: lexradar_dev_password
+      POSTGRES_DB: lexradar
+    ports:
+      - "5434:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U lexradar -d lexradar"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    restart: unless-stopped
+  flower:
+    image: mher/flower:2.0
+    container_name: lexradar-flower
+    command: celery --broker=redis://redis:6379/0 flower --port=5555
+    ports:
+      - "5555:5555"
+    depends_on:
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+
+  redis:
+    image: redis:7-alpine
+    container_name: lexradar-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+    restart: unless-stopped
+
+  worker:
+    build: .
+    container_name: lexradar-worker
+    command: celery -A execution.tasks.celery_app worker --loglevel=info
+    env_file:
+      - .env.docker
+    volumes:
+      - ./data:/app/data
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    restart: unless-stopped
+  
+
+volumes:
+  postgres_data:
+  redis_data:
+

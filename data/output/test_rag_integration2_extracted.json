@@ -1,0 +1,48 @@
+{
+  "document_number": "2025-555",
+  "document_date": "76 мая 2025",
+  "parties": [
+    {
+      "name": "ООО \"Консультанты плюс\"",
+      "role": "Исполнитель",
+      "inn": null,
+      "ogrn": null,
+      "kpp": null,
+      "address": null,
+      "signatory_name": null,
+      "signatory_position": null,
+      "power_basis": null,
+      "power_number": null,
+      "power_date": null,
+      "bank_account": null
+    },
+    {
+      "name": "ЗАО \"Стройка тест\"",
+      "role": "Заказчик",
+      "inn": null,
+      "ogrn": null,
+      "kpp": null,
+      "address": null,
+      "signatory_name": null,
+      "signatory_position": null,
+      "power_basis": null,
+      "power_number": null,
+      "power_date": null,
+      "bank_account": null
+    }
+  ],
+  "subject": "Консультационные услуги по управлению проектом",
+  "price": "$81,500 USD",
+  "price_amount": 81500.0,
+  "currency": "USD",
+  "payment_terms": "30% авансом, 40% в конце месяца 1, 30% в конце проекта",
+  "delivery_terms": "3 месяца с момента подписания",
+  "execution_term": "3 месяца с момента подписания",
+  "penalties": "1% от суммы в день за просрочку, максимум 15% от суммы",
+  "termination_terms": "С 45-дневным уведомлением",
+  "liability": "Штрафы ограничены максимум 15% от суммы",
+  "acceptance_procedure": "Гарантия качества: Пересчёт работ если качество ниже стандартов",
+  "governing_law": null,
+  "dispute_resolution": "Киевский хозсуд",
+  "additional_conditions": "Конфиденциальность: Все материалы конфиденциальны на период 2 лет"
+}
