@@ -4,7 +4,7 @@ from sqlalchemy.orm import DeclarativeBase
 
 from datetime import datetime
 
-from sqlalchemy import DateTime, Integer, String, ForeignKey, Float
+from sqlalchemy import DateTime, Integer, LargeBinary, String, ForeignKey, Float
 from sqlalchemy.orm import Mapped, mapped_column
 
 
@@ -19,7 +19,7 @@ class Processing(Base):
     file_hash: Mapped[str] = mapped_column(String, nullable=False)
 
     original_filename: Mapped[str] = mapped_column(String, nullable=False)
-    
+    file_content: Mapped[bytes | None] = mapped_column(LargeBinary, nullable=True)
     celery_task_id: Mapped[str | None] = mapped_column(String, nullable=True)
 
     status: Mapped[str] = mapped_column(
