@@ -46,13 +46,12 @@ async def analyze(
     processing_id = processing.id
     session.commit()
 
-    # 2. Сохраняем файл через StorageService
-    file_path = storage.save_upload(content, processing_id, file.filename)
+    storage.save_file(processing_id, content)
+    session.commit()
 
-    # 3. Отправляем задачу в Celery
     task = analyze_contract_task.delay(
         processing_id=processing_id,
-        file_path_str=str(file_path),
+        filename=file.filename,
         user_id=current_user.id,
     )
 

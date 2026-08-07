@@ -1,57 +1,35 @@
 """Работа с файлами: uploads, results, temporary files."""
 from pathlib import Path
 
-from paths import DATA_DIR
+from execution.database.models import Processing
+from sqlalchemy.orm import Session
 
 
 class StorageService:
-    def __init__(
-        self,
-        base_dir: Path | None = None,
-    ):
-        self._base_dir = base_dir or (DATA_DIR / "uploads")
-        self._base_dir.mkdir(
-            parents=True,
-            exist_ok=True,
-        )
+    
+    def __init__(self, session: Session):
+        self._session = session
 
-    def save_upload(
-        self,
-        content: bytes,
-        processing_id: int,
-        filename: str,
-    ) -> Path:
-        safe_filename = Path(filename).name
+    def save_file(self, processing_id: int, content: bytes) -> None:
+        processing = self._session.get(Processing, processing_id)
+        if processing is None:
+            raise ValueError(f"Processing {processing_id} not found")
+        processing.file_content = content
 
-        file_path = (
-            self._base_dir
-            / f"{processing_id}_{safe_filename}"
-        )
-
-        file_path.write_bytes(content)
-        return file_path
-
-    def read_text(
-        self,
-        file_path: str | Path,
-    ) -> str:
-        path = Path(file_path)
-
-        if not path.exists():
+    def read_file(self, processing_id: int) -> bytes:
+        processing = self._session.get(Processing, processing_id)
+        if processing is None or processing.file_content is None:
             raise FileNotFoundError(
-                f"File not found: {path}"
+                f"File content not found for processing {processing_id}"
             )
+        return processing.file_content
 
-        return path.read_text(encoding="utf-8")
+    def delete(self, processing_id: int) -> None:
+        """Обнуляет содержимое после обработки — не держим файлы в БД вечно."""
+        processing = self._session.get(Processing, processing_id)
+        if processing is not None:
+            processing.file_content = None
 
-    def delete(
-        self,
-        file_path: str | Path,
-    ) -> None:
-        Path(file_path).unlink(missing_ok=True)
-
-    def exists(
-        self,
-        file_path: str | Path,
-    ) -> bool:
-        return Path(file_path).exists()
+    def exists(self, processing_id: int) -> bool:
+        processing = self._session.get(Processing, processing_id)
+        return processing is not None and processing.file_content is not None

@@ -74,41 +74,33 @@ def _build_context_for_user(user_id: int) -> WorkerContext:
     retry_backoff_max=60,
     retry_jitter=True,
 )
-def analyze_contract_task(self, processing_id: int, file_path_str: str, user_id: int):
+
+def analyze_contract_task(self, processing_id: int, filename: str, user_id: int):
     """
     Celery-задача обработки договора.
-
-    Retry — только на transient errors (сеть, rate limit, 5xx Anthropic).
-    Permanent errors (битый файл, невалидные данные) → сразу помечаем 
-    processing.status = failed, чтобы клиент через GET /result увидел ошибку.
+    Содержимое файла берётся из БД (processings.file_content), т.к. web и
+    worker — разные контейнеры. Пишется во временный файл для парсинга.
     """
-    file_path = Path(file_path_str)
-
     try:
         ctx = _build_context_for_user(user_id)
         logger.warning(
-        "Analysis service in WorkerContext: %s.%s",
-        type(ctx.orchestrator).__module__,
-        type(ctx.orchestrator).__name__,    
-    )
-        process_contract(ctx, processing_id, file_path, user_id)
+            "Analysis service in WorkerContext: %s.%s",
+            type(ctx.orchestrator).__module__,
+            type(ctx.orchestrator).__name__,
+        )
+        process_contract(ctx, processing_id, filename, user_id)
         logger.info(f"Task succeeded: processing_id={processing_id}")
-    
+
     except TRANSIENT_ERRORS as e:
-        # Celery сам сделает retry (см. autoretry_for в декораторе).
-        # На последнем retry, если снова упадёт — попадёт в общий except ниже.
         logger.warning(
             f"Transient error, retry {self.request.retries + 1}/{self.max_retries}: {e}"
         )
         raise
 
     except Exception as e:
-        # Permanent error или все retry исчерпаны.
-        # Обновляем processing.status чтобы клиент увидел через GET /result.
         logger.exception(f"Task permanently failed: processing_id={processing_id}")
         _mark_processing_failed(processing_id, str(e))
-        raise  # re-raise чтобы Celery залогировал FAILED
-
+        raise
 
 def _mark_processing_failed(processing_id: int, error_message: str):
     """

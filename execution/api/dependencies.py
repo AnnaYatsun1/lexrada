@@ -105,10 +105,11 @@ def get_counterparty_risk_repository(
     """Фабрика CounterpartyRiskRepository для текущего запроса."""
     return CounterpartyRiskRepository(session)
 
-@lru_cache
-def get_storage_service() -> StorageService:
+def get_storage_service(
+    session: Session = Depends(get_db_session),
+) -> StorageService:
     """Singleton — один инстанс на приложение."""
-    return StorageService()
+    return StorageService(session)
 
 def get_review_repository(
     session: Session = Depends(get_db_session),

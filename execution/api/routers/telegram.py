@@ -119,13 +119,15 @@ async def telegram_webhook(
     processing_id = processing.id
     session.commit()
 
-    file_path = storage.save_upload(content, processing_id, filename)
+    storage.save_file(processing_id, content)
+    session.commit()
 
     task = analyze_contract_task.delay(
         processing_id=processing_id,
-        file_path_str=str(file_path),
+        filename=filename,
         user_id=user_id,
     )
+    
     processing_repo.set_celery_task_id(processing_id, task.id)
     session.commit()
 
