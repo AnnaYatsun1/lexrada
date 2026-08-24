@@ -114,4 +114,4 @@ alembic
 celery>=5.3
 redis>=5.0
 python-frontmatter
-sentence-transformers
+sentence-transformers==5.7.0
