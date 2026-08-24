@@ -1,0 +1,451 @@
+{
+  "name": "golden_retrieval",
+  "version": "1.0",
+  "created_at": "2026-08-12",
+  "purpose": "Baseline and before/after evaluation for Chroma retrieval and cross-encoder reranking.",
+  "metric_notes": {
+    "single_relevant_document_cases": "Для этой версии все кейсы имеют один основной gold-документ. Поэтому Precision@1 фактически равен Hit@1, а Recall@5 — Hit@5.",
+    "recommended_baseline": "Сначала измерить retrieval без reranker, затем на тех же query — retrieve_with_rerank.",
+    "recommended_k": {
+      "baseline_top_k": 5,
+      "reranker_fetch_k": 20,
+      "reranker_top_k": 5
+    }
+  },
+  "sources": {
+    "prozorro_contract_template_current": {
+      "title": "Официальный шаблон договора о закупке Prozorro",
+      "kind": "prozorro_public_contract_template",
+      "url": "https://render.prozorro.gov.ua/api/1.0/contract/template/00000000.0002.01",
+      "notes": "Содержит разделы об ответственности/пене и конфиденциальной информации."
+    },
+    "prozorro_brave1_nato_nda_2026": {
+      "title": "Brave1 International NATO — публичный framework с NDA",
+      "kind": "prozorro_current_framework",
+      "url": "https://prozorro.gov.ua/uk/framework/UA-F-2026-07-28-000001",
+      "notes": "Актуальный в 2026 публичный отбор; среди документов опубликован договор о неразглашении."
+    },
+    "prozorro_software_nda_2026": {
+      "title": "Prozorro UA-2026-05-18-013566-a — NDA document",
+      "kind": "prozorro_tender",
+      "url": "https://prozorro.gov.ua/tender/UA-2026-05-18-013566-a",
+      "notes": "В закупке опубликована инструкция/форма NDA."
+    },
+    "rada_remote_home_contract_forms": {
+      "title": "Типовые формы трудовых договоров о надомной и дистанционной работе",
+      "kind": "official_current_contract_form",
+      "url": "https://zakon.rada.gov.ua/go/z0886-21",
+      "notes": "Действующая официальная типовая форма."
+    },
+    "min_economy_nonfixed_contract": {
+      "title": "Примерная форма трудового договора с нефиксированным рабочим временем",
+      "kind": "official_contract_form",
+      "url": "https://me.gov.ua/documents/detail?id=ed82e663-b71e-4cd6-b775-6965e6255d64&isSpecial=true&lang=uk-ua&title=primirnaformatrudovogodogovoruznefiksovanimrobochimchasom",
+      "notes": "Официальная форма Минэкономики."
+    },
+    "dsp_written_contract_guidance": {
+      "title": "Держпраці: что означает письменная форма трудового договора",
+      "kind": "official_guidance",
+      "url": "https://dsp.gov.ua/faq/shcho-oznachaie-ukladennia-trudovoho-dohovoru-u-pysmovii-formi/",
+      "notes": "Актуальное официальное разъяснение."
+    },
+    "dsp_labor_campaign_2026": {
+      "title": "Держпраці 2026: трудовой договор — основа официальной работы",
+      "kind": "official_2026_guidance",
+      "url": "https://lviv.dsp.gov.ua/trudovyi-dohovir-zaporuka-bezpechnoi-ta-ofitsiinoi-pratsi/57145/",
+      "notes": "Материал государственной кампании 2026 года."
+    }
+  },
+  "cases": [
+    {
+      "id": "labor_001",
+      "domain": "labor",
+      "query": "Що саме вважається трудовим договором і які базові обов'язки виникають у працівника та роботодавця?",
+      "query_language": "uk",
+      "difficulty": "medium",
+      "filter": {
+        "country": "UA",
+        "doc_type": "labor"
+      },
+      "relevant_documents": [
+        "kzot_article_21.md"
+      ],
+      "gold_legal_reference": "КЗпП України, стаття 21",
+      "source_ids": [
+        "rada_remote_home_contract_forms",
+        "dsp_labor_campaign_2026"
+      ],
+      "rationale": "Запит стосується поняття трудового договору та основних взаємних обов'язків сторін."
+    },
+    {
+      "id": "labor_002",
+      "domain": "labor",
+      "query": "Чи можна укласти трудовий договір тільки на певний строк або на час виконання конкретної роботи?",
+      "query_language": "uk",
+      "difficulty": "easy",
+      "filter": {
+        "country": "UA",
+        "doc_type": "labor"
+      },
+      "relevant_documents": [
+        "kzot_article_23.md"
+      ],
+      "gold_legal_reference": "КЗпП України, стаття 23",
+      "source_ids": [
+        "rada_remote_home_contract_forms",
+        "min_economy_nonfixed_contract"
+      ],
+      "rationale": "Стаття 23 визначає види строків трудового договору."
+    },
+    {
+      "id": "labor_003",
+      "domain": "labor",
+      "query": "У яких випадках трудовий договір обов'язково має бути оформлений письмово?",
+      "query_language": "uk",
+      "difficulty": "medium",
+      "filter": {
+        "country": "UA",
+        "doc_type": "labor"
+      },
+      "relevant_documents": [
+        "kzot_article_24.md"
+      ],
+      "gold_legal_reference": "КЗпП України, стаття 24",
+      "source_ids": [
+        "dsp_written_contract_guidance",
+        "rada_remote_home_contract_forms"
+      ],
+      "rationale": "Запит напряму перевіряє правила укладення та обов'язкову письмову форму."
+    },
+    {
+      "id": "labor_004",
+      "domain": "labor",
+      "query": "Работодатель хочет установить новому сотруднику испытательный срок. Когда это допускается и кому испытание устанавливать нельзя?",
+      "query_language": "ru",
+      "difficulty": "hard",
+      "filter": {
+        "country": "UA",
+        "doc_type": "labor"
+      },
+      "relevant_documents": [
+        "kzot_article_26.md"
+      ],
+      "gold_legal_reference": "КЗпП Украины, статья 26",
+      "source_ids": [
+        "dsp_labor_campaign_2026"
+      ],
+      "rationale": "Стаття 26 регулює встановлення випробування при прийнятті на роботу."
+    },
+    {
+      "id": "labor_005",
+      "domain": "labor",
+      "query": "Який максимальний строк випробування можна встановити працівнику при прийнятті на роботу?",
+      "query_language": "uk",
+      "difficulty": "easy",
+      "filter": {
+        "country": "UA",
+        "doc_type": "labor"
+      },
+      "relevant_documents": [
+        "kzot_article_27.md"
+      ],
+      "gold_legal_reference": "КЗпП України, стаття 27",
+      "source_ids": [
+        "dsp_labor_campaign_2026"
+      ],
+      "rationale": "Стаття 27 присвячена саме тривалості випробування."
+    },
+    {
+      "id": "labor_006",
+      "domain": "labor",
+      "query": "Что происходит, если испытательный срок уже закончился, а сотрудник продолжает работать?",
+      "query_language": "ru",
+      "difficulty": "medium",
+      "filter": {
+        "country": "UA",
+        "doc_type": "labor"
+      },
+      "relevant_documents": [
+        "kzot_article_28.md"
+      ],
+      "gold_legal_reference": "КЗпП Украины, статья 28",
+      "source_ids": [
+        "dsp_labor_campaign_2026"
+      ],
+      "rationale": "Стаття 28 регулює результати випробування та наслідки його завершення."
+    },
+    {
+      "id": "labor_007",
+      "domain": "labor",
+      "query": "За яких підстав роботодавець може розірвати трудовий договір з працівником за власною ініціативою?",
+      "query_language": "uk",
+      "difficulty": "hard",
+      "filter": {
+        "country": "UA",
+        "doc_type": "labor"
+      },
+      "relevant_documents": [
+        "kzot_article_40.md"
+      ],
+      "gold_legal_reference": "КЗпП України, стаття 40",
+      "source_ids": [
+        "rada_remote_home_contract_forms",
+        "dsp_labor_campaign_2026"
+      ],
+      "rationale": "Стаття 40 містить підстави розірвання договору з ініціативи роботодавця."
+    },
+    {
+      "id": "labor_008",
+      "domain": "labor",
+      "query": "Чи зберігаються за працівником місце роботи та заробітна плата на час щорічної відпустки?",
+      "query_language": "uk",
+      "difficulty": "medium",
+      "filter": {
+        "country": "UA",
+        "doc_type": "labor"
+      },
+      "relevant_documents": [
+        "kzot_article_74.md"
+      ],
+      "gold_legal_reference": "КЗпП України, стаття 74",
+      "source_ids": [
+        "rada_remote_home_contract_forms"
+      ],
+      "rationale": "Стаття 74 визначає право на щорічні відпустки із збереженням місця роботи і зарплати."
+    },
+    {
+      "id": "labor_009",
+      "domain": "labor",
+      "query": "Яка мінімальна тривалість щорічної основної відпустки для працівника?",
+      "query_language": "uk",
+      "difficulty": "easy",
+      "filter": {
+        "country": "UA",
+        "doc_type": "labor"
+      },
+      "relevant_documents": [
+        "kzot_article_75.md"
+      ],
+      "gold_legal_reference": "КЗпП України, стаття 75",
+      "source_ids": [
+        "rada_remote_home_contract_forms"
+      ],
+      "rationale": "Стаття 75 визначає тривалість щорічної основної відпустки."
+    },
+    {
+      "id": "labor_010",
+      "domain": "labor",
+      "query": "Что законодательство считает заработной платой работника?",
+      "query_language": "ru",
+      "difficulty": "medium",
+      "filter": {
+        "country": "UA",
+        "doc_type": "labor"
+      },
+      "relevant_documents": [
+        "kzot_article_94.md"
+      ],
+      "gold_legal_reference": "КЗпП Украины, статья 94",
+      "source_ids": [
+        "rada_remote_home_contract_forms",
+        "min_economy_nonfixed_contract"
+      ],
+      "rationale": "Стаття 94 дає визначення заробітної плати."
+    },
+    {
+      "id": "nda_001",
+      "domain": "nda",
+      "query": "Які ознаки повинна мати інформація, щоб її можна було вважати комерційною таємницею?",
+      "query_language": "uk",
+      "difficulty": "medium",
+      "filter": {
+        "country": "UA",
+        "doc_type": "nda"
+      },
+      "relevant_documents": [
+        "gk_article_505.md"
+      ],
+      "gold_legal_reference": "ЦК України, стаття 505",
+      "source_ids": [
+        "prozorro_contract_template_current",
+        "prozorro_brave1_nato_nda_2026"
+      ],
+      "rationale": "Стаття 505 визначає поняття та ознаки комерційної таємниці."
+    },
+    {
+      "id": "nda_002",
+      "domain": "nda",
+      "query": "Какие права есть у владельца коммерческой тайны: может ли он разрешать использование и запрещать незаконное раскрытие?",
+      "query_language": "ru",
+      "difficulty": "medium",
+      "filter": {
+        "country": "UA",
+        "doc_type": "nda"
+      },
+      "relevant_documents": [
+        "gk_article_506.md"
+      ],
+      "gold_legal_reference": "ГК Украины, статья 506",
+      "source_ids": [
+        "prozorro_brave1_nato_nda_2026",
+        "prozorro_software_nda_2026"
+      ],
+      "rationale": "Стаття 506 визначає майнові права інтелектуальної власності на комерційну таємницю."
+    },
+    {
+      "id": "nda_003",
+      "domain": "nda",
+      "query": "Компанія передала органу державної влади комерційну таємницю для виконання його повноважень. Чи повинен державний орган охороняти ці відомості від розголошення?",
+      "query_language": "uk",
+      "difficulty": "hard",
+      "filter": {
+        "country": "UA",
+        "doc_type": "nda"
+      },
+      "relevant_documents": [
+        "gk_article_507.md"
+      ],
+      "gold_legal_reference": "ЦК України, стаття 507",
+      "source_ids": [
+        "prozorro_brave1_nato_nda_2026"
+      ],
+      "rationale": "Стаття 507 окремо регулює охорону комерційної таємниці органами державної влади."
+    },
+    {
+      "id": "nda_004",
+      "domain": "nda",
+      "query": "Сколько действует правовая охрана коммерческой тайны: есть фиксированный срок или она сохраняется, пока информация остается секретной и ценной?",
+      "query_language": "ru",
+      "difficulty": "hard",
+      "filter": {
+        "country": "UA",
+        "doc_type": "nda"
+      },
+      "relevant_documents": [
+        "gk_article_508.md"
+      ],
+      "gold_legal_reference": "ГК Украины, статья 508",
+      "source_ids": [
+        "prozorro_brave1_nato_nda_2026",
+        "prozorro_software_nda_2026"
+      ],
+      "rationale": "Стаття 508 пов'язує строк охорони зі збереженням ознак комерційної таємниці."
+    },
+    {
+      "id": "nda_005",
+      "domain": "nda",
+      "query": "У договорі передбачена пеня за кожен день прострочення. Що з погляду цивільного права є пенею і чим вона відрізняється від штрафу?",
+      "query_language": "uk",
+      "difficulty": "medium",
+      "filter": {
+        "country": "UA",
+        "doc_type": "nda"
+      },
+      "relevant_documents": [
+        "gk_article_549.md"
+      ],
+      "gold_legal_reference": "ЦК України, стаття 549",
+      "source_ids": [
+        "prozorro_contract_template_current"
+      ],
+      "rationale": "У чинному шаблоні Prozorro є денна пеня та штрафи; стаття 549 визначає поняття неустойки, штрафу і пені."
+    },
+    {
+      "id": "nda_006",
+      "domain": "nda",
+      "query": "Можно ли взыскать неустойку, если должник по закону не отвечает за нарушение обязательства?",
+      "query_language": "ru",
+      "difficulty": "hard",
+      "filter": {
+        "country": "UA",
+        "doc_type": "nda"
+      },
+      "relevant_documents": [
+        "gk_article_550.md"
+      ],
+      "gold_legal_reference": "ГК Украины, статья 550",
+      "source_ids": [
+        "prozorro_contract_template_current"
+      ],
+      "rationale": "Стаття 550 визначає підстави виникнення права на неустойку та виняток, коли боржник не відповідає за порушення."
+    },
+    {
+      "id": "nda_007",
+      "domain": "nda",
+      "query": "Чи можуть сторони договором збільшити розмір неустойки, встановлений законом, і чи може суд зменшити надмірну неустойку?",
+      "query_language": "uk",
+      "difficulty": "hard",
+      "filter": {
+        "country": "UA",
+        "doc_type": "nda"
+      },
+      "relevant_documents": [
+        "gk_article_551.md"
+      ],
+      "gold_legal_reference": "ЦК України, стаття 551",
+      "source_ids": [
+        "prozorro_contract_template_current"
+      ],
+      "rationale": "Стаття 551 регулює предмет і розмір неустойки та можливість її зміни."
+    },
+    {
+      "id": "nda_008",
+      "domain": "nda",
+      "query": "Стороння особа навмисно збирає секретні комерційні відомості, щоб використати їх у власному бізнесі, і цим завдає компанії істотної шкоди. Яка норма передбачає кримінальну відповідальність?",
+      "query_language": "uk",
+      "difficulty": "hard",
+      "filter": {
+        "country": "UA",
+        "doc_type": "nda"
+      },
+      "relevant_documents": [
+        "uk_article_231.md"
+      ],
+      "gold_legal_reference": "КК України, стаття 231",
+      "source_ids": [
+        "prozorro_brave1_nato_nda_2026",
+        "prozorro_software_nda_2026"
+      ],
+      "rationale": "Стаття 231 стосується незаконного збирання/використання відомостей, що становлять комерційну таємницю."
+    },
+    {
+      "id": "nda_009",
+      "domain": "nda",
+      "query": "Сотрудник получил доступ к коммерческой тайне по работе, а затем умышленно раскрыл ее без согласия владельца из личной выгоды и причинил существенный ущерб. Какая статья применяется?",
+      "query_language": "ru",
+      "difficulty": "hard",
+      "filter": {
+        "country": "UA",
+        "doc_type": "nda"
+      },
+      "relevant_documents": [
+        "uk_article_232.md"
+      ],
+      "gold_legal_reference": "УК Украины, статья 232",
+      "source_ids": [
+        "prozorro_contract_template_current",
+        "prozorro_brave1_nato_nda_2026"
+      ],
+      "rationale": "Стаття 232 регулює умисне розголошення комерційної таємниці особою, якій вона стала відома через професійну або службову діяльність."
+    },
+    {
+      "id": "nda_010",
+      "domain": "nda",
+      "query": "У NDA написано, що будь-яка інформація сторони автоматично є конфіденційною. Чи достатньо самого такого формулювання, щоб інформація мала правовий режим саме комерційної таємниці?",
+      "query_language": "uk",
+      "difficulty": "hard",
+      "filter": {
+        "country": "UA",
+        "doc_type": "nda"
+      },
+      "relevant_documents": [
+        "gk_article_505.md"
+      ],
+      "gold_legal_reference": "ЦК України, стаття 505",
+      "source_ids": [
+        "prozorro_contract_template_current"
+      ],
+      "rationale": "Шаблон Prozorro широко визначає конфіденційну інформацію, а стаття 505 дозволяє перевірити, чи відповідає вона саме ознакам комерційної таємниці."
+    }
+  ]
+}
