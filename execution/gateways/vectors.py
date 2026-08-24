@@ -1,6 +1,6 @@
 import chromadb
 from typing import Protocol
-from execution.gateways.reranker import get_reranker
+# from execution.gateways.reranker import get_reranker
 from execution.rag.rag_service import build_where
 from execution.rag.rag_service import init_rag_db
 from paths import CHROMA_DB_PATH
@@ -34,7 +34,7 @@ class ChromaStore:
             fetch_k: int = 20,
             filter: dict | None = None,
         ) -> list[dict]:
-
+            from execution.gateways.reranker import get_reranker
             if fetch_k < top_k:
                 raise ValueError("fetch_k должен быть >= top_k")
 
